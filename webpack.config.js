@@ -11,6 +11,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // https://webpack.js.org/plugins/mini-css-extract-plugin/
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const EsLintWebpackPlugin = require('eslint-webpack-plugin');
+
 // Конфиг вебпака.
 module.exports = (env, options) => {
   const isProd = options.mode === 'production';
@@ -32,7 +34,6 @@ module.exports = (env, options) => {
       // Путь, по которому создавать директорию с билдом
       path: path.resolve(__dirname, 'dist'),
     },
-    
     
     resolve: {
       // Разширения файлов, который вебпак будет автоматически распозновать.
@@ -65,6 +66,10 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         filename: 'bundle.css',
       }),
+      // Не работает
+      // new EsLintWebpackPlugin({
+      //   extensions: ['js', 'ts', 'tsx', 'vue'],
+      // }),
     ],
     
     /*
