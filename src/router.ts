@@ -2,7 +2,7 @@ import {
   createRouter,
   createWebHistory,
   Router,
-  RouterOptions
+  RouterOptions,
 } from 'vue-router'
 
 // Добавляем роуты

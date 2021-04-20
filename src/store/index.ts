@@ -10,8 +10,8 @@ const store = createStore<State>({
     message: 'Hello from Vuex :)',
   },
   getters: {
-    message: (state: State): string => state.message
-  }
+    message: (state: State): string => state.message,
+  },
 })
 
 export default store

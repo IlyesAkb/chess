@@ -66,10 +66,9 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         filename: 'bundle.css',
       }),
-      // Не работает
-      // new EsLintWebpackPlugin({
-      //   extensions: ['js', 'ts', 'tsx', 'vue'],
-      // }),
+      new EsLintWebpackPlugin({
+        extensions: ['js', 'ts', 'tsx', 'vue'],
+      }),
     ],
     
     /*
