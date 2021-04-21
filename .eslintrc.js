@@ -2,6 +2,7 @@ module.exports = {
   'env': {
     'browser': true,
     'es2021': true,
+    'jest/globals': true,
   },
   'extends': [
     'plugin:vue/essential',
@@ -15,6 +16,7 @@ module.exports = {
   'plugins': [
     'vue',
     '@typescript-eslint',
+    'eslint-plugin-jest',
   ],
   'rules': {
     'no-empty-function': 2,
