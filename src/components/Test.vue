@@ -8,7 +8,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'Test',
   props: {
-    message: {type: String},
+    message: { type: String },
   },
 })
 

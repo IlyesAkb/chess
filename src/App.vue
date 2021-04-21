@@ -17,7 +17,7 @@ export default defineComponent({
   components: {
     Test,
   },
-  computed: {...mapGetters(['message'])},
+  computed: { ...mapGetters(['message']) },
 })
 
 </script>

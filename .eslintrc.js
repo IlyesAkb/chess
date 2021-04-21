@@ -3,7 +3,10 @@ module.exports = {
     'browser': true,
     'es2021': true,
   },
-  'extends': 'plugin:vue/essential',
+  'extends': [
+    'plugin:vue/essential',
+    'eslint:recommended',
+  ],
   'parserOptions': {
     'ecmaVersion': 12,
     'parser': '@typescript-eslint/parser',
@@ -32,5 +35,7 @@ module.exports = {
     'operator-linebreak': [2, 'before'],
     'comma-style': 2,
     'no-multiple-empty-lines': [2, { 'max': 1 }],
+    'block-spacing': 2,
+    'object-curly-spacing': [2, 'always'],
   },
 }
