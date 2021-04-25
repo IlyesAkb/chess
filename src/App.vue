@@ -1,23 +1,36 @@
 <template>
   <div>
-    <Test :message="message" />
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link
+        class="link"
+        v-for="route of routes"
+        :key="route.name"
+        :to="route.path"
+    >
+      {{ route.name }}
+    </router-link>
     <router-view/>
   </div>
 </template>
 
 <script lang="tsx">
 import { defineComponent } from 'vue'
-import Test from '@components/Test.vue'
 import { mapGetters } from 'vuex'
+import { routes } from '@/router'
+import { RouteRecordRaw } from 'vue-router'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    Test,
+  data() {
+    return {
+      isBlack: false as boolean,
+    }
   },
-  computed: { ...mapGetters(['message']) },
+  computed: {
+    ...mapGetters(['message']),
+    routes(): Array<RouteRecordRaw> {
+      return routes
+    },
+  },
 })
 
 </script>
@@ -26,5 +39,9 @@ export default defineComponent({
 .title {
   text-align: center;
   color: red;
+}
+
+.link {
+  margin: 0 10px;
 }
 </style>
