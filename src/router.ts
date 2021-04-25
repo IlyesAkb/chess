@@ -1,26 +1,33 @@
 import {
   createRouter,
   createWebHistory,
-  Router,
+  Router, RouteRecordRaw,
   RouterOptions,
 } from 'vue-router'
 
 // Добавляем роуты
-const routes = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    name: 'Home',
     component: () => import('./pages/Home.vue'),
   },
   {
     path: '/about',
+    name: 'About',
     component: () => import('./pages/About.vue'),
+  },
+  {
+    path: '/chess',
+    name: 'Chess',
+    component: () => import('./pages/Chess.vue'),
   },
 ]
 
 // Создаем объект конфигурации роутера
 const options: RouterOptions  = {
   routes,
-  history: createWebHistory(),
+  history: createWebHistory('/'),
 }
 
 // Создаем экземпляр роутера

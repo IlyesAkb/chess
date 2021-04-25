@@ -33,6 +33,7 @@ module.exports = (env, options) => {
       filename: 'bundle.js',
       // Путь, по которому создавать директорию с билдом
       path: path.resolve(__dirname, 'dist'),
+      publicPath: '/'
     },
     
     resolve: {
